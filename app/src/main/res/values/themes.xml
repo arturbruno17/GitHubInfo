@@ -35,7 +35,7 @@
     <style name="TextAppearance.AppCompat.Titles.Paragraph">
         <item name="android:textSize">14sp</item>
         <item name="lineHeight">20.8sp</item>
-        <item name="android:fontFamily">@font/roboto</item>
+        <item name="fontFamily">@font/roboto</item>
     </style>
 
     <!-- Style for TextEdits -->

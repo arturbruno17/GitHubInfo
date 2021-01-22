@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryColor"
+    tools:context=".DetailsFragment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/userPhoto"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/username"
+        style="@style/TextAppearance.AppCompat.Titles.Title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="arturbruno17"
+        app:layout_constraintBottom_toBottomOf="@+id/userPhoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/userPhoto"
+        app:layout_constraintTop_toTopOf="@+id/userPhoto" />
+
+    <TextView
+        android:id="@+id/bio"
+        style="@style/TextAppearance.AppCompat.Titles.Paragraph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_margin"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/grid_margin"
+        android:text="Eu sou estudante de desenvolvimento android"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userPhoto" />
+
+    <ImageView
+        android:id="@+id/personLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_margin"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/icon_content_description"
+        android:src="@drawable/ic_person_black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bio"
+        app:tint="@color/primaryTextColor" />
+
+    <ImageView
+        android:id="@+id/locationLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_margin"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/icon_content_description"
+        android:src="@drawable/ic_location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/personLogo"
+        app:tint="@color/primaryTextColor" />
+
+    <TextView
+        android:id="@+id/followersAndFollowing"
+        style="@style/TextAppearance.AppCompat.Titles.Paragraph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Seguidores: 7 · Seguindo: 7"
+        app:layout_constraintBottom_toBottomOf="@+id/personLogo"
+        app:layout_constraintStart_toEndOf="@+id/personLogo"
+        app:layout_constraintTop_toTopOf="@+id/personLogo" />
+
+    <TextView
+        android:id="@+id/location"
+        style="@style/TextAppearance.AppCompat.Titles.Paragraph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Barreira, Ceará, Brasil"
+        app:layout_constraintBottom_toBottomOf="@+id/locationLogo"
+        app:layout_constraintStart_toEndOf="@+id/locationLogo"
+        app:layout_constraintTop_toTopOf="@+id/locationLogo" />
+
+    <TextView
+        android:id="@+id/repositoriesText"
+        style="@style/TextAppearance.AppCompat.Titles.Title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_margin"
+        android:layout_marginTop="50dp"
+        android:text="Repositórios"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locationLogo" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repositoriesText"
+        tools:listitem="@layout/repository" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,5 +9,14 @@
         android:id="@+id/searchFragment"
         android:name="com.posart.githubinfo.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.posart.githubinfo.DetailsFragment"
+        android:label="details_fragment"
+        tools:layout="@layout/details_fragment" />
 </navigation>
