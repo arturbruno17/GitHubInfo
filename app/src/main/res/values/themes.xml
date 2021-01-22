@@ -9,6 +9,50 @@
         <item name="colorSecondary">@color/secondaryColor</item>
         <item name="colorSecondaryVariant">@color/secondaryDarkColor</item>
         <item name="colorOnSecondary">@color/secondaryLightColor</item>
-        <!-- Customize your theme here. -->
+    </style>
+
+    <!-- Style for text -->
+    <style name="TextAppearance.AppCompat.Titles">
+        <item name="fontFamily">@font/fira_mono</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Titles.Title1">
+        <item name="android:textSize">24sp</item>
+        <item name="lineHeight">34sp</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Titles.Title2">
+        <item name="android:textSize">20sp</item>
+        <item name="lineHeight">30sp</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Titles.Title3">
+        <item name="android:textSize">18sp</item>
+        <item name="lineHeight">23.4sp</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Titles.Paragraph">
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">20.8sp</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <!-- Style for TextEdits -->
+    <style name="StyledTilEditTextTheme">
+        <item name="colorControlNormal">@color/primaryTextColor</item>
+        <item name="colorControlActivated">@color/secondaryColor</item>
+    </style>
+
+    <style name="StyledTilEditText" parent="TextAppearance.AppCompat.Titles.Paragraph">
+        <item name="android:theme">@style/StyledTilEditTextTheme</item>
+        <item name="android:textColorHint">@color/primaryTextColor</item>
+    </style>
+
+    <!-- Style for Buttons -->
+    <style name="StyledButton" parent="TextAppearance.AppCompat.Titles.Paragraph">
+        <item name="android:textColor">@color/secondaryTextColor</item>
+        <item name="backgroundTint">@color/secondaryColor</item>
+        <item name="cornerRadius">25dp</item>
     </style>
 </resources>
