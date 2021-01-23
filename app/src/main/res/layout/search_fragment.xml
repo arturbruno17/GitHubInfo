@@ -1,68 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/primaryColor"
-    tools:context=".SearchFragment">
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primaryColor"
+        tools:context=".SearchFragment">
 
-    <ImageView
-        android:id="@+id/searchImage"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/grid_margin"
-        android:layout_marginEnd="@dimen/grid_margin"
-        android:contentDescription="@string/illustrative_image"
-        android:src="@drawable/ic_search"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35000002" />
+        <ImageView
+            android:id="@+id/searchImage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid_margin"
+            android:layout_marginEnd="@dimen/grid_margin"
+            android:contentDescription="@string/illustrative_image"
+            android:src="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.35000002" />
 
-    <TextView
-        android:id="@+id/nameApp"
-        style="@style/TextAppearance.AppCompat.Titles.Title1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/app_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchImage" />
+        <TextView
+            android:id="@+id/nameApp"
+            style="@style/TextAppearance.AppCompat.Titles.Title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/app_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchImage" />
 
-    <EditText
-        android:id="@+id/inputUsername"
-        style="@style/StyledTilEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/grid_margin"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="@dimen/grid_margin"
-        android:ems="10"
-        android:fontFamily="@font/roboto"
-        android:hint="@string/hint_input_username"
-        android:importantForAutofill="no"
-        android:inputType="textShortMessage"
-        android:textAlignment="center"
-        android:textColorHint="@color/primaryTextColor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameApp" />
+        <EditText
+            android:id="@+id/inputUsername"
+            style="@style/StyledTilEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid_margin"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="@dimen/grid_margin"
+            android:ems="10"
+            android:fontFamily="@font/roboto"
+            android:hint="@string/hint_input_username"
+            android:importantForAutofill="no"
+            android:inputType="textShortMessage"
+            android:textAlignment="center"
+            android:textColorHint="@color/primaryTextColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameApp" />
 
-    <Button
-        android:id="@+id/buttonSearch"
-        style="@style/StyledButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/grid_margin"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="@dimen/grid_margin"
-        android:text="@string/name_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputUsername" />
+        <Button
+            android:id="@+id/buttonSearch"
+            style="@style/StyledButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid_margin"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/grid_margin"
+            android:text="@string/name_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputUsername" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.posart.githubinfo.databinding.DetailsFragmentBinding
 
 class DetailsFragment : Fragment() {
 
@@ -15,13 +16,12 @@ class DetailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.details_fragment, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+        val binding =  DetailsFragmentBinding.inflate(inflater)
         viewModel = ViewModelProvider(this).get(DetailsViewModel::class.java)
-        // TODO: Use the ViewModel
+
+        val arguments = DetailsFragmentArgs.fromBundle(requireArguments())
+
+        return binding.root
     }
 
 }
