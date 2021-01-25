@@ -4,7 +4,8 @@
     <string name="illustrative_image">Imagem ilustrativa</string>
     <string name="hint_input_username">Digite o nome de usuário</string>
     <string name="name_button">PESQUISAR</string>
-    <string name="icon_content_description">Ícone representando uma pessoa</string>
+    <string name="icon_person_content_description">Ícone representando uma pessoa</string>
+    <string name="icon_location_content_description">Ícone representando a localização da pessoa</string>
     <string name="repositories">Repositórios</string>
     <string name="followers_and_following">Seguidores: %d · Seguindo: %d</string>
 </resources>
