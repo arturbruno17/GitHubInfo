@@ -24,6 +24,7 @@
             android:layout_marginTop="30dp"
             app:civ_border_color="@color/secondaryColor"
             app:civ_border_width="1dp"
+            imageUrl="@{viewModel.user.avatar_url}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
