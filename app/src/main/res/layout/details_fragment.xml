@@ -22,7 +22,8 @@
             android:layout_height="50dp"
             android:layout_marginStart="53dp"
             android:layout_marginTop="30dp"
-            android:src="@drawable/ic_launcher_background"
+            app:civ_border_color="@color/secondaryColor"
+            app:civ_border_width="1dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -63,7 +64,7 @@
             android:src="@drawable/ic_person_black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/bio"
-            app:tint="@color/primaryTextColor" />
+            app:tint="@color/secondaryColor" />
 
         <ImageView
             android:id="@+id/locationLogo"
@@ -75,7 +76,7 @@
             android:src="@drawable/ic_location"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/personLogo"
-            app:tint="@color/primaryTextColor" />
+            app:tint="@color/secondaryColor" />
 
         <TextView
             android:id="@+id/followersAndFollowing"
