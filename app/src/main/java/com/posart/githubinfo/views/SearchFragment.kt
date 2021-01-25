@@ -1,4 +1,4 @@
-package com.posart.githubinfo
+package com.posart.githubinfo.views
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.posart.githubinfo.databinding.SearchFragmentBinding
+import com.posart.githubinfo.search.SearchFragmentDirections
 
 class SearchFragment : Fragment() {
     override fun onCreateView(
@@ -18,7 +19,9 @@ class SearchFragment : Fragment() {
         binding.buttonSearch.setOnClickListener {
             val username = binding.inputUsername.text.toString()
             findNavController().navigate(
-                SearchFragmentDirections.actionSearchFragmentToDetailsFragment(username)
+                SearchFragmentDirections.actionSearchFragmentToDetailsFragment(
+                    username
+                )
             )
         }
         return binding.root
