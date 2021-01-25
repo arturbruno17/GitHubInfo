@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout>
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.posart.githubinfo.viewmodels.DetailsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/primaryColor"
@@ -25,6 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="arturbruno17"
+            android:text="@{viewModel.user.login}"
             app:layout_constraintBottom_toBottomOf="@+id/userPhoto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/userPhoto"
@@ -33,15 +41,17 @@
         <TextView
             android:id="@+id/bio"
             style="@style/TextAppearance.AppCompat.Titles.Paragraph"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/grid_margin"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="@dimen/grid_margin"
-            tools:text="Eu sou estudante de desenvolvimento android"
+            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userPhoto" />
+            app:layout_constraintTop_toBottomOf="@+id/userPhoto"
+            android:text="@{viewModel.user.bio}"
+            tools:text="Eu sou estudante de desenvolvimento android" />
 
         <ImageView
             android:id="@+id/personLogo"
@@ -85,6 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             tools:text="Barreira, Ceará, Brasil"
+            android:text="@{viewModel.user.location}"
             app:layout_constraintBottom_toBottomOf="@+id/locationLogo"
             app:layout_constraintStart_toEndOf="@+id/locationLogo"
             app:layout_constraintTop_toTopOf="@+id/locationLogo" />

@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.posart.githubinfo.databinding.SearchFragmentBinding
-import com.posart.githubinfo.search.SearchFragmentDirections
 
 class SearchFragment : Fragment() {
     override fun onCreateView(

@@ -6,4 +6,5 @@
     <string name="name_button">PESQUISAR</string>
     <string name="icon_content_description">Ícone representando uma pessoa</string>
     <string name="repositories">Repositórios</string>
+    <string name="followers_and_following">Seguidores: %d · Seguindo: %d</string>
 </resources>
