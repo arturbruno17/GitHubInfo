@@ -9,7 +9,10 @@ import retrofit2.http.Path
 interface GitHubApi {
 
     @GET("users/{username}")
-    fun getUser(@Path("username") username: String?): Call<UserNetwork>
+    fun getUser(@Path("username") username: String): Call<UserNetwork>
+
+    @GET("users/{username}/repos")
+    fun getReposUser(@Path("username") username: String): Call<List<ReposNetwork>>
 
     companion object {
         operator fun invoke() : GitHubApi {
