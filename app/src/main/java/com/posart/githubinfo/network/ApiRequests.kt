@@ -12,7 +12,7 @@ interface GitHubApi {
     fun getUser(@Path("username") username: String): Call<UserNetwork>
 
     @GET("users/{username}/repos")
-    fun getReposUser(@Path("username") username: String): Call<List<ReposNetwork>>
+    fun getReposUser(@Path("username") username: String): Call<List<RepoNetwork>>
 
     companion object {
         operator fun invoke() : GitHubApi {

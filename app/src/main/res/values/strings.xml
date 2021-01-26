@@ -8,4 +8,5 @@
     <string name="icon_location_content_description">Ícone representando a localização da pessoa</string>
     <string name="repositories">Repositórios</string>
     <string name="followers_and_following">Seguidores: %d · Seguindo: %d</string>
+    <string name="loading_data_user">CARREGANDO DADOS DO USUÁRIO…</string>
 </resources>

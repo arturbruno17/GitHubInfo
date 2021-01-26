@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/primaryColor"
-        tools:context=".views.DetailsFragment">
+        tools:context=".views.details.DetailsFragment">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/userPhoto"
@@ -121,6 +121,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/repositoriesText"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/repository" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
