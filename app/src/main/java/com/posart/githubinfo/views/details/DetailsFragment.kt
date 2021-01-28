@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.posart.githubinfo.R
@@ -36,22 +35,26 @@ class DetailsFragment : Fragment() {
                 requireArguments()
             )
 
-        val factory = DetailsViewModel.Factory(arguments.username)
-        viewModel = ViewModelProvider(this, factory).get(DetailsViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(DetailsViewModel::class.java)
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
+        viewModel.getUserAndRepos(arguments.username)
 
         viewModel.user.observe(viewLifecycleOwner, Observer {
-            binding.followersAndFollowing.text = getString(
-                R.string.followers_and_following,
-                it.followers, it.following
-            )
+            it?.let {
+                binding.followersAndFollowing.text = getString(
+                    R.string.followers_and_following,
+                    it.followers, it.following
+                )
+            }
         })
 
         viewModel.reposUser.observe(viewLifecycleOwner, Observer {
-            binding.recyclerViewList.adapter = ReposAdapter(it) {
-                repository -> adapterOnClick(repository)
+            it?.let {
+                binding.recyclerViewList.adapter = ReposAdapter(it) { repository ->
+                    adapterOnClick(repository)
+                }
             }
         })
 

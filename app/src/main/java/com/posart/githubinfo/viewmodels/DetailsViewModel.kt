@@ -1,23 +1,24 @@
 package com.posart.githubinfo.viewmodels
 
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.*
+import com.posart.githubinfo.network.RepoNetwork
+import com.posart.githubinfo.network.UserNetwork
 import com.posart.githubinfo.repositories.UserRepository
+import kotlinx.coroutines.launch
 
-class DetailsViewModel(username: String) : ViewModel() {
+class DetailsViewModel() : ViewModel() {
 
-    val user = UserRepository().getUser(username)
-    val reposUser = UserRepository().getUserRepos(username)
+    val user = MutableLiveData<UserNetwork>()
+    val reposUser = MutableLiveData<List<RepoNetwork>>()
 
-    class Factory(private val username: String) : ViewModelProvider.Factory {
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(DetailsViewModel::class.java)) {
-                @Suppress("UNCHECKED_CAST")
-                return DetailsViewModel(username) as T
-            }
-            throw IllegalArgumentException("Unable to construct viewmodel")
+    fun getUserAndRepos(username: String) {
+        viewModelScope.launch {
+            val userApi = UserRepository().fetchUser(username)
+            val reposUserApi = UserRepository().fetchRepos(username)
+
+            user.value = userApi
+            reposUser.value = reposUserApi
         }
-
     }
 
 }

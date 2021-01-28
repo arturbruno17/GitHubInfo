@@ -1,56 +1,40 @@
 package com.posart.githubinfo.repositories
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import android.util.Log
 import com.posart.githubinfo.network.GitHubApi
 import com.posart.githubinfo.network.RepoNetwork
 import com.posart.githubinfo.network.UserNetwork
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import kotlinx.coroutines.*
+import retrofit2.await
+import java.lang.Exception
 
 class UserRepository {
-    fun getUser(username: String): LiveData<UserNetwork> {
-        val userResponse = MutableLiveData<UserNetwork>()
+    suspend fun fetchUser(username: String): UserNetwork? {
+        return withContext(Dispatchers.IO) {
 
-        GitHubApi().getUser(username).enqueue(object : Callback<UserNetwork> {
-            override fun onFailure(call: Call<UserNetwork>, t: Throwable) {
-                userResponse.value = null
+            val userResponse: UserNetwork? = try {
+                GitHubApi().getUser(username).await()
+            } catch (e: Exception) {
+                null
             }
 
-            override fun onResponse(call: Call<UserNetwork>, response: Response<UserNetwork>) {
-                if (response.isSuccessful) {
-                    userResponse.value = response.body()
-                } else {
-                    userResponse.value = null
-                }
-            }
-
-        })
-
-        return userResponse
+            Log.i("UserRepository/User", userResponse.toString())
+            userResponse
+        }
     }
 
-    fun getUserRepos(username: String): LiveData<List<RepoNetwork>> {
-        val reposResponse = MutableLiveData<List<RepoNetwork>>()
+    suspend fun fetchRepos(username: String): List<RepoNetwork>? {
+        return withContext(Dispatchers.IO) {
 
-        GitHubApi().getReposUser(username).enqueue(object : Callback<List<RepoNetwork>> {
-            override fun onFailure(call: Call<List<RepoNetwork>>, t: Throwable) {
-                reposResponse.value = null
+            val repoResponse: List<RepoNetwork>? = try {
+                GitHubApi().getReposUser(username).await()
+            } catch (e: Exception) {
+                null
             }
 
-            override fun onResponse(
-                call: Call<List<RepoNetwork>>,
-                response: Response<List<RepoNetwork>>
-            ) {
-                if (response.isSuccessful) {
-                    reposResponse.value = response.body()
-                } else {
-                    reposResponse.value = null
-                }
-            }
-        })
 
-        return reposResponse
+            Log.i("UserRepository/Repos", repoResponse.toString())
+            repoResponse
+        }
     }
 }
