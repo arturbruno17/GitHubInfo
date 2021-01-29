@@ -14,14 +14,16 @@ interface GitHubApi {
     @GET("users/{username}/repos")
     fun getReposUser(@Path("username") username: String): Call<List<RepoNetwork>>
 
-    companion object {
-        operator fun invoke() : GitHubApi {
-            return Retrofit.Builder()
-                .baseUrl("https://api.github.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(GitHubApi::class.java)
-        }
+}
+
+object WebApiAccess {
+    val gitHubApi : GitHubApi by lazy {
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://api.github.com/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        return@lazy retrofit.create(GitHubApi::class.java)
     }
 }
 
