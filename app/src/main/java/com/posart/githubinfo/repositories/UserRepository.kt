@@ -1,19 +1,22 @@
 package com.posart.githubinfo.repositories
 
 import android.util.Log
-import com.posart.githubinfo.network.GitHubApi
-import com.posart.githubinfo.network.RepoNetwork
-import com.posart.githubinfo.network.UserNetwork
+import com.posart.githubinfo.network.*
 import kotlinx.coroutines.*
 import retrofit2.await
 import java.lang.Exception
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class UserRepository {
+@Singleton
+class UserRepository @Inject constructor(
+    private val gitHubService: GitHubService
+) {
     suspend fun fetchUser(username: String): UserNetwork? {
         return withContext(Dispatchers.IO) {
 
             val userResponse: UserNetwork? = try {
-                GitHubApi().getUser(username).await()
+                gitHubService.getUser(username).await()
             } catch (e: Exception) {
                 null
             }
@@ -27,7 +30,7 @@ class UserRepository {
         return withContext(Dispatchers.IO) {
 
             val repoResponse: List<RepoNetwork>? = try {
-                GitHubApi().getReposUser(username).await()
+                gitHubService.getReposUser(username).await()
             } catch (e: Exception) {
                 null
             }

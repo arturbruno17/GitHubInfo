@@ -7,16 +7,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.posart.githubinfo.R
 import com.posart.githubinfo.databinding.DetailsFragmentBinding
 import com.posart.githubinfo.network.RepoNetwork
 import com.posart.githubinfo.viewmodels.DetailsViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailsFragment : Fragment() {
 
-    private lateinit var viewModel: DetailsViewModel
+    private val viewModel: DetailsViewModel by viewModels()
 
     private fun adapterOnClick(repository: RepoNetwork) {
         val intent = Intent(Intent.ACTION_VIEW)
@@ -34,8 +36,6 @@ class DetailsFragment : Fragment() {
             DetailsFragmentArgs.fromBundle(
                 requireArguments()
             )
-
-        viewModel = ViewModelProvider(this).get(DetailsViewModel::class.java)
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
