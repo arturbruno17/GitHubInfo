@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import com.posart.githubinfo.R
 import com.posart.githubinfo.databinding.DetailsFragmentBinding
 import com.posart.githubinfo.network.RepoNetwork
+import com.posart.githubinfo.utils.updateScreen
 import com.posart.githubinfo.viewmodels.DetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -56,6 +57,23 @@ class DetailsFragment : Fragment() {
                     adapterOnClick(repository)
                 }
             }
+        })
+
+        val listViews = listOf(
+            binding.userPhoto,
+            binding.username,
+            binding.bio,
+            binding.personLogo,
+            binding.locationLogo,
+            binding.followersAndFollowing,
+            binding.location,
+            binding.repositoriesText,
+            binding.recyclerViewList,
+            binding.progressBar
+        )
+
+        viewModel.status.observe(viewLifecycleOwner, Observer {
+            binding.root.updateScreen(listViews, it)
         })
 
         return binding.root
