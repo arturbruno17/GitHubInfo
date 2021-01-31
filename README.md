@@ -6,6 +6,7 @@
   <img src="https://img.shields.io/static/v1?label=converter-gson&message=2.9.0&color=8296A7&style=flat-square"/>
   <img src="https://img.shields.io/static/v1?label=glide&message=4.11.0&color=25BAA2&style=flat-square"/>
   <img src="https://img.shields.io/static/v1?label=recyclerview&message=1.1.0&color=25BAA2&style=flat-square"/>
+  <img src="https://img.shields.io/static/v1?label=hilt&message=1.0.0-alpha02&color=2196F3&style=flat-square"/>
 </p>
 
 <p align="center">
@@ -21,7 +22,8 @@ Aplicativo que realiza chamadas na API do GitHub e mostra os dados e repositóri
 [MVVM](https://developer.android.com/jetpack/guide?hl=pt-br) (Model View ViewModel) e usa algumas bibliotecas para auxiliar em certas funcionalidades:
 
 * Retrofit: integração da API com o aplicativo. Usada juntamente com Gson para converter o JSON em classe de dados.
-* Glide: carregamento das imagens vindas da internet
+* Glide: carregamento das imagens vindas da internet.
+* Hilt: biblioteca para realizar a injeção de dependência de maneira automática.
 
 O aplicativo é simples de usar. Ao entrar no aplicativo, será apresentada uma tela onde você digitará o nome de usuário e apertará em "PESQUISAR". Após apertar o botão, será
 exibida uma tela onde será apresentado os dados e repositórios do usuário.
@@ -39,6 +41,7 @@ Nesta seção, você encontrará vários links e recursos que falam acerca das b
 |---	|---	|
 |   Glide	|   https://bumptech.github.io/glide/	|
 |   Retrofit	|  https://square.github.io/retrofit/ 	|
+|   Hilt	|  https://dagger.dev/hilt/ 	|
 
 # 🤝 Contribuição
 O app foi criado e testado em um dispositivo físico, Redmi Note 9s, mas é disponível para qualquer um que queira contribuir.
