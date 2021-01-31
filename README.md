@@ -23,7 +23,7 @@ Aplicativo que realiza chamadas na API do GitHub e mostra os dados e repositóri
 
 * Retrofit: integração da API com o aplicativo. Usada juntamente com Gson para converter o JSON em classe de dados.
 * Glide: carregamento das imagens vindas da internet.
-* Hilt: biblioteca para realizar a injeção de dependência de maneira automática.
+* Hilt: injeção de dependência de maneira automática.
 
 O aplicativo é simples de usar. Ao entrar no aplicativo, será apresentada uma tela onde você digitará o nome de usuário e apertará em "PESQUISAR". Após apertar o botão, será
 exibida uma tela onde será apresentado os dados e repositórios do usuário.
